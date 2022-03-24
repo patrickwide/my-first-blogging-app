@@ -1,0 +1,35 @@
+{% include "header.html" %}
+<div class="container">
+    <h1 class="mt-5 ml-1 text text-secondary">All Posts by {{ name }}</h1>
+
+    <div class="container bg-light rounded">
+        <br>
+           {% for row in result %}
+        <div class="jumbotron bg-dark ml-1 mr-1 mb-2 p-2 rounded ">
+                <div class="row  ml-2">
+                    <div>
+                        <img class="mb- img" src="../static/img/{{ row[3] }}" alt="product image" style="width:100px">
+                    </div>
+                    <div class="mt-4 ml-2 ">
+                         <h5 class="blg-colors"> {{row[1]}}</h5>
+                        <p class="blg-colors">Written by <i class="text-primary">{{ row[5] }}</i></p>
+                    </div>
+                </div>
+                <div class="">
+                 <p class="text text-success">posted on {{row[4]}}</p>
+                    <p class="blg-colors">{{ row[2] }}</p>
+                    <a class="btn btn-outline-success" href="/repost">Repost</a>
+                    <a class="btn btn-outline-primary" href="/comment">Comment</a>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+        <br>
+
+    </div>
+
+<br>
+{% include "footer.html" %}
+</div>

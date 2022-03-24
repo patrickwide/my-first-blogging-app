@@ -1,0 +1,30 @@
+{% include "header.html"%}
+
+<div class="container">
+    <br>
+<div class="jumbotron mt-3 bg-dark">
+
+<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+    <div class="jumbotron mt-5 login-size">
+<h class="text-danger">{{msg1}}</h>
+<h class="text-success">{{msg2}}</h>
+
+<form action="/login-user" method="POST">
+    <label  for="input1">Enter Email or Password</label>
+
+    <input class="form-control" type="text" name="email" placeholder="Enter email or phone" >
+    <label  for="input1">password</label>
+    <input class="form-control" type="password" name="password" placeholder="Enter Password">
+    <small class="text-muted">
+        must be 8-20 characters long.
+    </small>
+    <br>
+    <input class="btn btn-success" type="submit" value="login">
+    <br><br>
+</form>
+</div>
+
+
+</div>
+</div>
+</div>{% include "footer.html" %}

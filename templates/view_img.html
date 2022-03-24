@@ -1,0 +1,22 @@
+{% include "header.html" %}
+<div class="container mt-5 text-danger">
+   <h3> {{ msg }} </h3>
+</div>
+
+{% for row in result %}
+<br><br>
+<div class="container p-2 bg-dark rounded" style="max-height:890px;max-width:650px;">
+
+    <center>
+        <img class=" image" src="../static/img/{{ row[3] }}" style="width:99%;height:auto;" alt="product image">
+    </center>
+
+</div>
+<div class="container">
+<center>
+     <a href="/gallery" class="btn btn-primary m-5">go back</a>
+</center>
+</div>
+
+{% endfor %}
+{% include "footer.html" %}

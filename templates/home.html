@@ -1,0 +1,58 @@
+{% include "header.html" %}
+<div class="container">
+    <h1 class="mt-5 ml-4">All Posts</h1>
+     <nav>
+         <form class="form-inline">
+            <input  type="text" name="search" value="" autocomplete="off" id="myinput" onkeyup="searchFunction()" aria-label="search" placeholder="search blogger"  class="search-blogger  form-control mr-sm-2">
+             <br><br>
+             <a class="{{ style_logout }} m-1" href="/{{ login }}">{{ login }}</a> <a class="{{ style_register }} m-1" href="/{{ register }}">{{ register }}</a>
+             <a class="btn btn-outline-primary m-1" href="/user_check">+Blog</a>
+         </form>
+     </nav>
+
+    <div class="container bg-light rounded " id="wrapper">
+
+        <br>
+           {% for row in result %}
+
+        <div class="jumbotron bg-dark ml-1 mr-1 mb-2 p-2 rounded blog_box">
+
+                <div class="row  ml-2">
+                    <div>
+                        <img class="mb- img" src="../static/img/{{ row[3] }}" alt="product image" style="width:100px">
+                    </div>
+                    <div class="mt-4 ml-2 ">
+                         <h5 class="blg-colors"> {{row[1]}}</h5>
+                            <a href="/view_blogs?user={{ row[5] }}" class="text-primary blogger_name" >
+                              <b class="text-light">Blog By</b>  {{row[5]}}
+                            </a>
+
+                    </div>
+                </div>
+                <div class="">
+                 <small class="text text-success">posted on {{row[4]}}</small>
+                    <p class="blg-colors">{{ row[2] }}</p>
+                    <a class="btn btn-outline-success" href="/repost">Repost</a>
+                    <a class="btn btn-outline-primary" href="/comment">Comment</a>
+
+                </div>
+
+            </div>
+
+
+            {% endfor %}
+        <br>
+
+    </div>
+
+<br>
+{% include "footer.html" %}
+    <br>
+<div class="bg-dark p-2 rounded">
+    <center>
+<a href="/" class="text-success"><h5>made by patrick</h5></a>
+    </center>
+
+</div>
+<br>
+</div>

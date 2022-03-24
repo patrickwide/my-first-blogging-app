@@ -1,0 +1,47 @@
+{% include "header.html" %}
+{% include "header.html" %}
+<br>
+<div class="container mt-3">
+
+    <div class="container bg-light rounded">
+        <br>
+        <div class="jumbotron bg-dark ml-1 mr-1 mb-2 p-2 rounded ">
+            <form action="/add_blog" method="POST" enctype="multipart/form-data">
+                <div class="ml-1">
+                        <h5 class="text text-light mt-1" > welcome <small class="text text-primary">{{ blogger }}</small></h5>
+                </div>
+
+                <div class="row p-2">
+                    <div class="ml-2">
+                          <label  class="text text-light" autofocus >input blog title</label><br>
+                          <input type="text" class="form-control" name="title" placeholder="input title"><br>
+                    </div>
+
+                    <div class="ml-2">
+                         <label  class="text text-light" >choose a blog icon</label><br>
+                         <input class="btn btn-light text-dark" type="file" name="my_image"><br><br>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+                <div class="mt-1 ml-1 ">
+                    <label  class="text text-light" >input you blog</label>
+                    <textarea name="blog_content" id="" cols="" rows="10" class="form-control" placeholder="blog content"></textarea><br>
+                    <input class="btn btn-success" type="submit" value="upload post"><br><br>
+                </div>
+            </form>
+        </div>
+
+        <br>
+
+    </div>
+
+<br>
+
+{% include "footer.html" %}
+  </div>

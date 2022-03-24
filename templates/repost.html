@@ -1,0 +1,19 @@
+{% include "header.html" %}
+<div class="jumbotron">
+    this is the repost page
+</div>
+<div class="container">
+    <div class="col-md-6">
+<form action="/add_blog" method="POST" enctype="multipart/form-data">
+    <label for="">input blog title</label>
+    <input type="text" class="form-control" name="title" placeholder="input title"><br><br>
+    <label for="">choose a blog picture</label><br>
+    <input class="btn btn-primary" type="file" name="my_image"><br><br>
+    <label for="">input you blog</label>
+    <textarea name="blog_content" id="" cols="" rows="10" class="form-control" placeholder="blog content"></textarea><br>
+    <input class="btn btn-success" type="submit" value="upload post"><br><br>
+</form>
+        </div>
+</div>
+
+{% include "footer.html" %}

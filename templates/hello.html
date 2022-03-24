@@ -1,0 +1,73 @@
+
+
+
+@app.route('/add_teacher', methods=['POST'])
+def add_teacher():
+    first_name = request.form["first_name"]
+    last_name = request.form["last_name"]
+    return jsonify({"success": True,"last_name":last_name,"last_name":last_name})#render_template("add_teachers_table.html")#"""we wil use thesame  tables to add techers and students  """
+
+----------------------------------
+
+                                    <div class="col-md-3 mb-2">
+                                        <label for="validationCustom01">Email <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" id="validationCustom01" placeholder="email" name="email" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                                Please enter email.
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 mb-2">
+                                        <label for="validationCustom02">phone <span class="text-danger">*</span></label>
+                                        <input type="tel" class="form-control" id="validationCustom02" placeholder="phone" name="phone" required>
+                                         <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                                Please enter mobile number.
+                                        </div>
+                                    </div>
+
+                            </div>
+
+
+                                <div class="form-row ">
+                                    <div class="col-lg-3 col-mb-3 col-sm-6 col-xm-12 mb-2">
+                                        <div class="form-group">
+                                            <label for=""> Class/grade <span class="text-danger">*</span></label>
+                                            <select class="custom-select" name="grade" required>
+                                                <option value="">Open this select menu</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-mb-3 col-sm-6 col-xm-12 mb-2">
+                                        <div class="form-group">
+                                            <label for=""> Class name <span class="text-danger">*</span></label>
+                                            <select class="custom-select" name="class_name" required>
+                                                <option value="">Open this select menu</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-mb-3 col-sm-6 col-xm-12 mb-2">
+                                        <div class="form-group">
+                                            <label for="">Subject/course <span class="text-danger">*</span></label>
+                                            <select class="custom-select" name="subject" required>
+                                                <option value="">Open this select menu</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                            <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                        </div>
+                                    </div>

@@ -1,0 +1,87 @@
+{% include "header.html" %}
+<br>
+<div class="container mt-3">
+
+    <div class="container bg-light rounded">
+        <br>
+        <div class="jumbotron bg-dark ml-1 mr-1 mb-2 p-2 rounded ">
+            <form action="/add_blog" method="POST" enctype="multipart/form-data">
+                <div class="ml-1">
+                        <h5 class="text text-light mt-1" > welcome <small class="text text-primary">{{ blogger }}</small></h5>
+                    <small class="text-danger">{{ msg }}</small>
+                </div>
+
+                <div class="row p-2">
+                    <div class="ml-2">
+                          <label  class="text text-light" >input blog title</label><br>
+                          <input type="text" class="form-control" name="title" placeholder="input title"  /><br>
+                    </div>
+
+                    <div class="ml-2">
+                         <label  class="text text-light" >choose a blog icon</label><br>
+                         <input class="btn btn-light text-dark" type="file" name="my_image"><br><br>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+                <div class="mt-1 ml-1 ">
+                    <label  class="text text-light" >input you blog</label>
+                    <textarea name="blog_content" wrap="soft" id="" cols="4" rows="10" class="form-control bg-light" placeholder="Blog content"></textarea><br>
+                    <input class="btn btn-success" type="submit" value="upload post"><br><br>
+                </div>
+            </form>
+        </div>
+
+        <br>
+
+    </div>
+
+<br>
+    <div class="jumbotron bg-light p-1">
+
+    <div class="jumbotron p-2 m-2 bg-dark">
+        <h5 class="text-light pb-1"><u> All My Posts </u></h5>
+    </div>
+    </div>
+
+    <div class="container bg-light mt-2 rounded">
+        <br>
+
+           {% for row in result %}
+        <h2>{{ msg2 }}</h2>
+        <div class="jumbotron bg-dark ml-1 mr-1 mb-2 p-2 rounded">
+                <div class="row  ml-2">
+                    <div>
+                        <img class="mb- img" src="../static/img/{{ row[3] }}" alt="product image" style="width:100px">
+                    </div>
+                    <div class="mt-4 ml-2 ">
+                         <h5 class="blg-colors"> {{row[1]}}</h5>
+                        <p class="blg-colors">Written by <i class="text-primary">{{row[5]}}</i></p>
+                    </div>
+                </div>
+                <div class="">
+                 <small class="text text-success">posted on {{row[4]}}</small>
+                    <article class="blg-colors">{{ row[2] }}</article>
+                    <a class="btn btn-outline-success m-1" href="/repost">Repost</a>
+                    <a class="btn btn-outline-primary m-1" href="/comment">Comment</a>
+                    <a class="btn btn-info m-1" href="/update-blog?id={{ row[0] }}">Update</a>
+                    <a class="btn btn-danger m-1" href="/delete-blog?id={{ row[0] }}">Delete</a>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+        <br>
+
+    </div>
+
+<br>
+
+{% include "footer.html" %}
+</div>

@@ -1,0 +1,62 @@
+{% include "header.html" %}
+<br>
+<div class="container bg-dark mt-2 pt-5 rounded">
+<div class="row">
+<div class="col-lg-6 col-md-12 col-xm-12">
+
+<div class="jumbotron">
+<h class="text-danger">{{ msg1 }}</h>
+<h class="text-success">{{ msg2 }}</h>
+
+<form action="/add_user_to_db" method="POST">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <label >first name</label>
+    <input class="form-control" type="text" name="fname" placeholder="Your First Name"><br>
+
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <label >last name</label>
+    <input class="form-control" type="text" name="lname" placeholder="Your Last Name"><br>
+
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <label >username</label>
+    <input class="form-control" type="text" name="username" placeholder="create a username">
+    <small class="text-muted ml-2 text-success">username must be unique.</small>
+    <br>
+    </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <label >phone</label>
+    <input class="form-control" type="tel" name="phone" placeholder="Your Phone Number"><br>
+    </div>
+    </div>
+    <br>
+    <label >Email</label>
+    <input class="form-control" type="email" name="email" placeholder="Your Email"><br>
+   <div class="row">
+       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <label >create password</label>
+    <input class="form-control" type="password" name="password_1" placeholder="Your Password">
+    <div class="invalid-feedback">{{msg_pass}}</div>
+    <br>
+           </div>
+       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+    <label >confirm password</label>
+    <input class="form-control" type="password" name="password_2" placeholder="Confirm Password">
+    <div class="invalid-feedback">{{msg_pass}}</div>
+
+       </div>
+       </div>
+    <input class="btn btn-success m-2" type="submit" value="register">
+    <br>
+</form>
+</div>
+</div>
+</div>
+</div>
+<br><br>{% include "footer.html" %}

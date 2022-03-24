@@ -1,0 +1,50 @@
+{% include "header.html" %}
+<br>
+<div class="container mt-3">
+
+    <div class="container bg-light rounded">
+        <br>
+        <div class="jumbotron bg-dark ml-1 mr-1 mb-2 p-2 rounded ">
+            <form action="/perform-update" method="POST" enctype="multipart/form-data">
+                {% for row in result %}
+
+
+                <div class="ml-1">
+                </div>
+                <div class="row p-2">
+                    <div class="ml-3 mr-3">
+                    <div>
+                        <img class=" img" src="../static/img/{{ row[3] }}" alt="product image" style="width:100px">
+                    </div>
+                    </div>
+                    <div class="ml-2">
+                          <label  class="text text-light" >input blog title</label><br>
+                          <input type="text" class="form-control" name="title" value="{{ row[1] }}" placeholder="input title"  /><br>
+                    </div>
+                    <div class="ml-2">
+                         <label  class="text text-light" >choose a blog icon</label><br>
+                         <input class="btn btn-light text-dark" type="file" name="my_image"><br><br>
+                    </div>
+                </div>
+                <div class="mt-1 ml-1 ">
+                    <label  class="text text-light" >input you blog</label>
+                    <textarea name="blog_content" id="" cols="4" rows="10" class="form-control bg-light" placeholder="Blog content">{{ row[2] }}</textarea><br>
+
+                <input type="hidden" name="id" value="{{ row[0] }}">
+                <input type="hidden" name="prev_img" value="{{ row[3] }}">
+
+                <input class="btn btn-success" type="submit" value="update post"><br><br>
+                </div>
+                {% endfor %}
+
+            </form>
+        </div>
+
+        <br>
+
+    </div>
+
+<br>
+
+{% include "footer.html" %}
+</div>
